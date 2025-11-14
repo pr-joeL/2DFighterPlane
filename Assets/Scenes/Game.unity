@@ -701,6 +701,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999943546}
   m_CullTransparentMesh: 1
+--- !u!1 &1346506779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3855599758820907727, guid: b588dbb14bc87374e82d5fcc8f10c4f6, type: 3}
+  m_PrefabInstance: {fileID: 6874544941734441424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1346506786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346506779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c117c903afbe1c44a3c8c457bb71db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircularEnemy
+  speed: 2
+  radius: 3
 --- !u!1 &1473855882
 GameObject:
   m_ObjectHideFlags: 0
