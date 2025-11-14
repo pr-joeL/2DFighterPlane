@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176436632}
+  - component: {fileID: 176436633}
   m_Layer: 0
   m_Name: EnemyTwoSpawner
   m_TagString: Untagged
@@ -150,6 +151,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176436633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176436631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadb03874c2a0b24ead02a20c56d45d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyType2Spawner
+  enemyType2Prefab: {fileID: 1687611164}
+  spawnInterval: 3
+  spawnXMin: -8
+  spawnXMax: 8
+  spawnY: 6
 --- !u!1 &194126353
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6465214131589529892, guid: 2946f3eb6029d8a40b20e03adb96e4fa, type: 3}
   enemyOnePrefab: {fileID: 8729755512266785908, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+  enemyTwoPrefab: {fileID: 0}
   cloudPrefab: {fileID: 8901978872678414076, guid: 14dd4fa52784c904e83c0650f3eea560, type: 3}
   livesText: {fileID: 999943548}
   horizontalScreenSize: 0
@@ -209,6 +228,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5839743660794730906, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839743660794730906, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839743660794730906, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3019608
+      objectReference: {fileID: 0}
     - target: {fileID: 8691327502464060309, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.9329
@@ -274,6 +305,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.56
       objectReference: {fileID: 0}
+    - target: {fileID: 5839743660794730906, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b40d9adc88f58b04f87c1e63c07840f8, type: 3}
     - target: {fileID: 5839743660794730906, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
       propertyPath: m_Color.b
       value: 0.84263396
