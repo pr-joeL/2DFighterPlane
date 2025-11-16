@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject enemyTwoPrefab;
     public GameObject cloudPrefab;
-
+    public GameObject coinPrefab;
     public TextMeshProUGUI livesText;
-
+    public TextMeshProUGUI scoreText;
     public float horizontalScreenSize;
     public float verticalScreenSize;
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     }
     public void AddScore(int earnedScore)
     {
-        score = score + earnedScore;
+        scoreText.text = "Score: " + earnedScore;
     }
 
     public void ChangeLivesText (int currentLives)

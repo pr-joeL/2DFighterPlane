@@ -1,24 +1,32 @@
 using UnityEngine;
-using TMPro; // Important for TextMeshPro
-
+using UnityEngine.UI; // Required for UI text
+using TMPro;
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText; // Assign this in the Inspector
-    private int currentScore = 0;
+    public static ScoreManager Instance { get; private set; }
+    public TextMeshProUGUI scoreText;
+
+    private int score = 0;
+
+    
 
     void Start()
     {
-        UpdateScoreText(); // Initialize the displayed score
+        UpdateScoreText();
     }
 
-    public void AddScore(int points)
+    public void AddScore(int amount)
     {
-        currentScore += points;
+        score += amount;
         UpdateScoreText();
     }
 
     void UpdateScoreText()
     {
-        scoreText.text = "Score: " + currentScore.ToString();
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score.ToString();
+        }
     }
 }
+
