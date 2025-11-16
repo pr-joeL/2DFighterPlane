@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public GameObject explosionPrefab;
-    
+    public int scoreValue = 10;
     private GameManager gameManager;
 
     // Start is called before the first frame update
@@ -36,4 +36,13 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-}
+    void OnDestroy()
+    {
+        // Find the ScoreManager in the scene and add points
+        ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
+        if (scoreManager != null)
+        {
+            scoreManager.AddScore(scoreValue);
+        }
+    }}
+    
