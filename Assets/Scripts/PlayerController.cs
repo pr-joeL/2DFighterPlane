@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     private float speed;
 
     private GameManager gameManager;
-
+    private bool isShieldActive = false;
+    public int currentHealth = 100;
+    public int maxHealth = 100;
     private float horizontalInput;
     private float verticalInput;
 
@@ -72,5 +74,44 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
 
+    }
+    public void ActivatePowerUp(PowerUpScript.PowerUpType type, float duration, float amount)
+    {
+        switch (type)
+        {
+            
+            case PowerUpScript.PowerUpType.Shield:
+                StartCoroutine(ShieldRoutine(duration));
+                break;
+            
+        }
+    }
+
+    IEnumerator ShieldRoutine(float duration)
+    {
+        isShieldActive = true;
+        Debug.Log("Shield activated!");
+        yield return new WaitForSeconds(duration);
+        isShieldActive = false;
+        Debug.Log("Shield deactivated.");
+    }
+
+    // Example of how shield might be used in a damage function
+    public void TakeDamage(int damageAmount)
+    {
+        if (!isShieldActive)
+        {
+            currentHealth -= damageAmount;
+            Debug.Log("Player took " + damageAmount + " damage. Current health: " + currentHealth);
+            if (currentHealth <= 0)
+            {
+                Debug.Log("Player defeated!");
+                // Handle player death
+            }
+        }
+        else
+        {
+            Debug.Log("Shield absorbed damage!");
+        }
     }
 }
